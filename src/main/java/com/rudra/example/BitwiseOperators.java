@@ -4,23 +4,30 @@ package com.rudra.example;
  * Bitwise Operators in java
  *
  */
-public class App 
+public class BitwiseOperators
 {
     public static void main( String[] args )
     {
-        App.bitwiseAndOperator(3, 6);
+        BitwiseOperators.bitwiseAndOperator(3, 6);
+        BitwiseOperators.bitwiseAndOperator(2, 4);
 
-        App.bitwiseOrOperator(3, 6);
+        BitwiseOperators.bitwiseOrOperator(3, 6);
+        BitwiseOperators.bitwiseOrOperator(2, 4);
 
-        App.bitwiseXOROperator(3, 6);
+        BitwiseOperators.bitwiseXOROperator(3, 6);
+        BitwiseOperators.bitwiseXOROperator(2, 4);
 
-        App.bitwiseNotOperator(1);
+        BitwiseOperators.bitwiseNotOperator(1);
+        BitwiseOperators.bitwiseNotOperator(2);
 
-        App.bitwiseLeftShiftOperator(3, 2);
+        BitwiseOperators.bitwiseLeftShiftOperator(3, 2);
+        BitwiseOperators.bitwiseLeftShiftOperator(5, 3);
 
-        App.bitwiseRightShiftOperator(33, 1);
+        BitwiseOperators.bitwiseRightShiftOperator(33, 1);
+        BitwiseOperators.bitwiseRightShiftOperator(32, 2);
 
-        App.bitwiseUnSignedRightShiftOperator(-2, 1);
+        BitwiseOperators.bitwiseUnSignedRightShiftOperator(-2, 1);
+        BitwiseOperators.bitwiseUnSignedRightShiftOperator(-5, 2);
 
     }
     /**
@@ -29,11 +36,11 @@ public class App
      *  Example x: 3 and y: 6
      *  x in binary: 000 .... 0011
      *  y in binary: 000 .... 0110
-     *  x & y      : 000 .... 0010
+     *  x & y      : 000 .... 0010/
      *  result : 2
      */
-    public static void bitwiseAndOperator( int x, int y) {
-        System.out.println(x & y);
+    private static void bitwiseAndOperator( int x, int y) {
+        System.out.println(String.format("%s & %s : %s", x, y, x & y));
     }
     /**
      *  Bitwise | Operator : Considering the inputs are converted in binary format
@@ -44,8 +51,8 @@ public class App
      *  x & y      : 000 .... 0111
      *  result : 7
      */
-    public static void bitwiseOrOperator( int x, int y) {
-        System.out.println(x | y);
+    private static void bitwiseOrOperator( int x, int y) {
+        System.out.println(String.format("%s | %s : %s", x, y, x | y));
     }
     /**
      *  Bitwise ^ Operator : Considering the inputs are converted in binary format
@@ -56,8 +63,8 @@ public class App
      *  x & y      : 000 .... 0101
      *  result : 5
      */
-    public static void bitwiseXOROperator(int x, int y) {
-        System.out.println(x ^ y);
+    private static void bitwiseXOROperator(int x, int y) {
+        System.out.println(String.format("%s ^ %s : %s", x, y, x ^ y));
     }
     /**
      *  Bitwise ~ Operator : Considering the inputs are converted in binary format
@@ -67,8 +74,8 @@ public class App
      *  ~x         : 111 .... 1110 (-ve number can be represented as 2Power32 -1)
      *  result : 2power32 -1 -1 which is 2power32 -2 which is '-2'
      */
-    public static void bitwiseNotOperator(int x) {
-        System.out.println(~x);
+    private static void bitwiseNotOperator(int x) {
+        System.out.println(String.format("~%s : %s", x, ~x));
     }
     /**
      *  Bitwise << Operator : Considering the inputs are converted in binary format
@@ -78,8 +85,8 @@ public class App
      *  x<<2 (3<<2): 000 .... 1100
      *  result : 12
      */
-    public static void bitwiseLeftShiftOperator(int x, int n) {
-        System.out.println(x << n);
+    private static void bitwiseLeftShiftOperator(int x, int n) {
+        System.out.println(String.format("%s << %s : %s", x, n, x << n));
     }
     /**
      *  Bitwise >> Operator : Considering the inputs are converted in binary format
@@ -89,8 +96,8 @@ public class App
      *  x>>1 (33>>1): 000 ....010000
      *  result : 16
      */
-    public static void bitwiseRightShiftOperator(int x, int n) {
-        System.out.println(x >> n);
+    private static void bitwiseRightShiftOperator(int x, int n) {
+        System.out.println(String.format("%s >> %s : %s", x, n, x >> n));
     }
     /**
      *  Bitwise >>> Operator : Considering the inputs are converted in binary format
@@ -101,7 +108,7 @@ public class App
      *  x>>>2 (-2>>>1): 0111 .... 1111  (2powe31 -1)
      *  result : 2147483647
      */
-    public static void bitwiseUnSignedRightShiftOperator(int x, int n) {
-        System.out.println(x >>> n);
+    private static void bitwiseUnSignedRightShiftOperator(int x, int n) {
+        System.out.println(String.format("%s >>> %s : %s", x, n, x >>> n));
     }
 }
